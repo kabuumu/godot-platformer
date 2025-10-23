@@ -44,6 +44,8 @@ jobs:
         run: |
           mkdir -p _site
           cp -r ${{ steps.export.outputs.build_directory }}/Web/* _site/
+          # Copy COI Service Worker for Cross-Origin Isolation support
+          cp web_template/coi-serviceworker.min.js _site/
           # Create index redirect if needed
           if [ ! -f _site/index.html ]; then
             echo "Creating index.html redirect"
