@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c9k9jj5y5oqxe"]
+[gd_scene load_steps=3 format=3 uid="uid://c9k9jj5y5oqxe"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font_size = 8
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -15,9 +18,6 @@ offset_bottom = 48.0
 layout_mode = 2
 text = "ENERGY"
 label_settings = SubResource("LabelSettings_1")
-
-[sub_resource type="LabelSettings" id="LabelSettings_1"]
-font_size = 8
 
 [node name="HealthValue" type="ProgressBar" parent="HealthBar"]
 layout_mode = 2
