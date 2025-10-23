@@ -30,6 +30,8 @@ The game is automatically deployed to GitHub Pages after each build. Play it her
 - **Space / W**: Jump (press again while on wall to wall jump)
 - **X / Enter**: Shoot
 
+For detailed controls and gameplay tips, see [CONTROLS.md](CONTROLS.md).
+
 ## Development
 
 ### Prerequisites
@@ -83,6 +85,12 @@ Contributions are welcome! Feel free to:
 - Improve graphics and animations
 - Add sound effects and music
 - Fix bugs
+
+## Additional Resources
+
+- [Detailed Documentation](DOCUMENTATION.md) - Technical details and architecture
+- [Controls Guide](CONTROLS.md) - Complete controls reference and gameplay tips
+- [GitHub Pages Setup](GITHUB_PAGES_SETUP.md) - Instructions for enabling web deployment
 
 ## License
 
