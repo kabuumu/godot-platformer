@@ -5,7 +5,7 @@ extends Camera2D
 @export var deadzone_width = 64.0  # Horizontal deadzone (32 pixels each side from center)
 @export var deadzone_height = 48.0  # Vertical deadzone (24 pixels each side from center)
 
-# Smoothing speed for camera movement when following player
+# Smoothing speed for Y-axis camera movement (X-axis follows instantly like Mega Man)
 @export var follow_speed = 5.0
 
 # Target position for smooth camera movement
@@ -43,8 +43,10 @@ func _process(delta):
 	elif player_offset.y < -half_deadzone_height:
 		target_position.y += player_offset.y + half_deadzone_height
 	
-	# Smoothly move camera towards target position
-	global_position = global_position.lerp(target_position, follow_speed * delta)
+	# Move camera towards target position
+	# X-axis follows perfectly (like Mega Man), Y-axis is smoothed
+	global_position.x = target_position.x
+	global_position.y = lerp(global_position.y, target_position.y, follow_speed * delta)
 	
 	# Snap to nearest pixel for pixel-perfect rendering
 	global_position = global_position.round()
