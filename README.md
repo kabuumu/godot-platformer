@@ -14,6 +14,7 @@ The game is automatically deployed to GitHub Pages after each build. Play it her
   - Wall sliding and wall jumping
   - Shooting projectiles
   - Enemy AI with patrol behavior
+  - Smooth camera with deadzone following
   
 - **NES-style graphics:**
   - 256x224 resolution (scaled up for modern displays)

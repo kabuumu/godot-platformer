@@ -13,6 +13,13 @@ This is a NES-style platformer game inspired by Mega Man, built with Godot Engin
 - **Shooting**: X or Enter key to fire energy projectiles
 - **Shoot Cooldown**: 0.3 seconds between shots to prevent spam
 
+### Camera System
+- **Deadzone-based camera**: Camera only moves when player exits a defined deadzone area
+- **Smooth following**: Camera smoothly follows the player with lerp interpolation
+- **Pixel-perfect rendering**: Camera position is snapped to pixels for authentic NES-style graphics
+- **Configurable bounds**: Deadzone width (64px) and height (48px) can be adjusted via exported variables
+- **NES-era feel**: Mimics classic platformer camera behavior from games like Mega Man
+
 ### Enemy AI
 - Simple patrol behavior with edge and wall detection
 - Takes damage from player projectiles
@@ -49,6 +56,7 @@ godot-platformer/
 │   └── bullet.tscn      # Projectile
 ├── scripts/              # GDScript game logic
 │   ├── player.gd        # Player controller
+│   ├── camera.gd        # Camera deadzone system
 │   ├── enemy.gd         # Enemy AI
 │   ├── bullet.gd        # Projectile behavior
 │   └── hud.gd           # UI controller
