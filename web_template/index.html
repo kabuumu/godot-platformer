@@ -11,6 +11,7 @@
 	<meta name="apple-mobile-web-app-title" content="Mega Man Style Platformer">
 	<meta name="theme-color" content="#000000">
 	<title>Mega Man Style Platformer</title>
+	<link rel="icon" type="image/svg+xml" href="icon.svg">
 	<style>
 		body {
 			touch-action: none;
@@ -137,10 +138,9 @@
 	</div>
 
 	<script src="coi-serviceworker.min.js"></script>
-	<script src="$GODOT_BASENAME.js"></script>
+	<script src="$GODOT_URL"></script>
 	<script>
 		const GODOT_CONFIG = $GODOT_CONFIG;
-		const GODOT_THREADS_ENABLED = $GODOT_THREADS_ENABLED;
 		const engine = new Engine(GODOT_CONFIG);
 
 		(async function() {
@@ -187,12 +187,11 @@
 				console.error(msg);
 				setStatusNotice(msg);
 				setStatusMode('notice');
-				initializing = false;
 			}
 
 			const missing = Engine.getMissingFeatures();
 			if (missing.length !== 0) {
-				if (GODOT_THREADS_ENABLED && missing.indexOf('SharedArrayBuffer') !== -1) {
+				if (missing.indexOf('SharedArrayBuffer') !== -1) {
 					setStatusNotice('Error\nThe following features required to run Godot projects on the Web are missing:\n' + missing.join('\n') + '\n\nThis game requires threading support which needs SharedArrayBuffer.\nPlease ensure your browser supports it and Cross-Origin Isolation is enabled.\n\nNote: If you see this error on GitHub Pages, the COI Service Worker may still be installing.\nPlease refresh the page in a few seconds.');
 				} else {
 					setStatusNotice('Error\nThe following features required to run Godot projects on the Web are missing:\n' + missing.join('\n'));
