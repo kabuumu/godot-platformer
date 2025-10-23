@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxk9jj5y5oqxe"]
+
+[ext_resource type="PackedScene" uid="uid://c7j1yqx8nxjxe" path="res://scenes/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://b8k9jj5y5oqxe" path="res://scenes/enemy.tscn" id="2_enemy"]
+[ext_resource type="PackedScene" uid="uid://c9k9jj5y5oqxe" path="res://ui/hud.tscn" id="3_hud"]
+[ext_resource type="Texture2D" uid="uid://d4h8jj5y5oqxe" path="res://assets/tiles/platform.svg" id="4_tile"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1"]
+texture = ExtResource("4_tile")
+texture_region_size = Vector2i(16, 16)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_1"]
+tile_size = Vector2i(16, 16)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_1")
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_1")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_player")]
+position = Vector2(32, 180)
+
+[node name="Enemy" parent="." instance=ExtResource("2_enemy")]
+position = Vector2(150, 180)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_enemy")]
+position = Vector2(200, 100)
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 112)
+zoom = Vector2(2, 2)

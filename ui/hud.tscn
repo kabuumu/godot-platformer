@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c9k9jj5y5oqxe"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_hud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1"]
+font_size = 8
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="HealthBar" type="VBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 80.0
+offset_bottom = 48.0
+
+[node name="HealthLabel" type="Label" parent="HealthBar"]
+layout_mode = 2
+text = "ENERGY"
+label_settings = SubResource("LabelSettings_1")
+
+[node name="HealthValue" type="ProgressBar" parent="HealthBar"]
+layout_mode = 2
+max_value = 28.0
+value = 28.0
+show_percentage = false
