@@ -75,6 +75,9 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	# Snap to pixel-perfect grid for crisp rendering
+	position = position.round()
+	
 	# Update animation
 	update_animation()
 

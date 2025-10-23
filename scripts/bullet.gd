@@ -9,6 +9,8 @@ func _ready():
 
 func _physics_process(delta):
 	position.x += direction * SPEED * delta
+	# Snap to pixel-perfect grid for crisp rendering
+	position = position.round()
 
 func _on_body_entered(body):
 	if body.has_method("take_damage"):
