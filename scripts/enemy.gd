@@ -34,6 +34,9 @@ func _physics_process(delta):
 	
 	velocity.x = direction * SPEED
 	move_and_slide()
+	
+	# Snap to pixel-perfect grid for crisp rendering
+	position = position.round()
 
 func take_damage(amount):
 	health -= amount
