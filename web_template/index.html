@@ -202,7 +202,7 @@
 
 			setStatusMode('indeterminate');
 
-			await engine.init();
+			await engine.init(GODOT_CONFIG.executable);
 			setStatusMode('hidden');
 			
 			engine.startGame({
