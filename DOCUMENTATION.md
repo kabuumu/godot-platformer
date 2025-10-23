@@ -15,7 +15,7 @@ This is a NES-style platformer game inspired by Mega Man, built with Godot Engin
 
 ### Camera System
 - **Deadzone-based camera**: Camera only moves when player exits a defined deadzone area
-- **Smooth following**: Camera smoothly follows the player with lerp interpolation
+- **Mega Man-style following**: X-axis follows player perfectly, Y-axis is smoothed with lerp interpolation
 - **Pixel-perfect rendering**: Camera position is snapped to pixels for authentic NES-style graphics
 - **Configurable bounds**: Deadzone width (64px) and height (48px) can be adjusted via exported variables
 - **NES-era feel**: Mimics classic platformer camera behavior from games like Mega Man
